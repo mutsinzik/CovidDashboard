@@ -31,11 +31,12 @@ order by 1,2
 -- European Union is part of Europe
 
 Select location, SUM(cast(new_deaths as int)) as TotalDeathCount
-From PortfolioProject..CovidDeaths
+From PortfolioProject..CovidDeaths$
 Where continent is null 
-and location not in ('World', 'European Union', 'International')
+and location not in ('World', 'European Union', 'International', 'High income', 'Lower middle income', 'Upper middle income')
 Group by location
 order by TotalDeathCount desc
+
 
 
 -- 3.
